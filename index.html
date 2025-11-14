@@ -1,0 +1,133 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Girl Vibe Auth</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #ffb7d5, #ff9ac0, #ffa9d1);
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .container {
+      width: 380px;
+      background: #fff;
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      animation: fadeIn 0.6s ease;
+    }
+
+    h2 {
+      color: #e83e8c;
+      margin-bottom: 20px;
+      font-weight: 600;
+    }
+
+    .input-group {
+      width: 100%;
+      margin-bottom: 15px;
+      text-align: left;
+    }
+
+    input {
+      width: 100%;
+      padding: 12px;
+      border-radius: 10px;
+      border: 2px solid #ffb3d9;
+      outline: none;
+      font-size: 15px;
+      transition: 0.3s;
+    }
+
+    input:focus {
+      border-color: #ff66a3;
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      border: none;
+      border-radius: 10px;
+      background: #ff66a3;
+      color: white;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background: #e0558d;
+    }
+
+    .switch {
+      margin-top: 15px;
+      font-size: 14px;
+    }
+
+    .switch a {
+      color: #ff4d94;
+      text-decoration: none;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <form class="container" id="loginBox" method="POST" action="login.php">
+    <h2>Welcome Babe ✨</h2>
+    <div class="input-group">
+      <input type="text" name="username" placeholder="Username" required />
+    </div>
+    <div class="input-group">
+      <input type="password" name="password" placeholder="Password" required />
+    </div>
+    <button type="submit">Login</button>
+    <div class="switch">Don't have an account? <a onclick="showSignup()">Sign Up</a></div>
+  </form>
+
+  <form class="container" id="signupBox" style="display:none;" method="POST" action="signup.php">
+    <h2>Create Your Account 💗</h2>
+    <div class="input-group">
+      <input type="text" name="fullname" placeholder="Full Name" required />
+    </div>
+    <div class="input-group">
+      <input type="email" name="email" placeholder="Email" required />
+    </div>
+    <div class="input-group">
+      <input type="password" name="password" placeholder="Password" required />
+    </div>
+    <button type="submit">Create Account</button>
+    <div class="switch">Already have an account? <a onclick="showLogin()">Login</a></div>
+  </form>
+
+  <script>
+    function showSignup() {
+      document.getElementById('loginBox').style.display = 'none';
+      document.getElementById('signupBox').style.display = 'block';
+    }
+
+    function showLogin() {
+      document.getElementById('signupBox').style.display = 'none';
+      document.getElementById('loginBox').style.display = 'block';
+    }
+  </script>
+</body>
+</html>
