@@ -1,4 +1,10 @@
 <?php
+session_start();
+
+if (!isset($_SESSION['fullname'])) {
+    header("Location: login.php"); 
+    exit();
+}
 include 'db_config.php';
 ?>
 

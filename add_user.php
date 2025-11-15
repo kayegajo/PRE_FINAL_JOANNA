@@ -1,4 +1,10 @@
 <?php
+session_start();
+
+if (!isset($_SESSION['fullname'])) {
+    header("Location: login.php"); 
+    exit();
+}
 require 'db_config.php';
 header('Content-Type: application/json');
 

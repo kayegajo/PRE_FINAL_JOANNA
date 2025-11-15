@@ -1,8 +1,8 @@
 <?php
 ini_set('display_errors', 1);
 error_reporting(E_ALL);
-session_start(); // Start the session at the top
-require 'db_config.php'; // Connect to database
+session_start(); 
+require 'db_config.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $username = $_POST['username'] ?? '';
@@ -23,7 +23,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $row = $result->fetch_assoc();
         if (password_verify($password, $row['password'])) {
             // ✅ Set session after successful login
-            $_SESSION['username'] = $row['fullname']; // or $row['email'] if you prefer
+            $_SESSION['fullname'] = $row['fullname']; // or $row['email'] if you prefer
             header("Location: index.php"); // Redirect to dashboard
             exit();
         } else {

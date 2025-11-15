@@ -2,8 +2,8 @@
 session_start();
 require 'db_config.php'; // Database connection
 
-if (!isset($_SESSION['username'])) {
-    header("Location: index.html");
+if (!isset($_SESSION['fullname'])) {
+    header("Location: login.php");
     exit();
 }
 
